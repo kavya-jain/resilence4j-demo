@@ -25,6 +25,8 @@ public class ClientService {
         Function<Integer, Integer> decoratedFunction = CircuitBreaker.decorateFunction(cb, remoteService::process);
         for (int i = 0; i < 10; i++) {
             try {
+                if(i==5)
+                    Thread.sleep(3000);
                 decoratedFunction.apply(i);
             } catch (Exception e) {
                 e.printStackTrace();
