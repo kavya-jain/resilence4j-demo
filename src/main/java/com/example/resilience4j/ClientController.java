@@ -11,9 +11,15 @@ public class ClientController {
     @Autowired
     private ClientService client;
 
-    @GetMapping("/test-client")
-    public ResponseEntity<String> testClient() {
+    @GetMapping("/test-circuit-breaker")
+    public ResponseEntity<String> testCircuitBreaker() {
         client.makeRemoteServerCall();
+        return ResponseEntity.ok().body("Testing completed");
+    }
+    
+    @GetMapping("/test-rate-limiter")
+    public ResponseEntity<String> testRateLimiter() {
+        client.testRateLimiter();
         return ResponseEntity.ok().body("Testing completed");
     }
 

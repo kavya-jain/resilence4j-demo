@@ -14,9 +14,15 @@ public class RemoteServiceImpl implements RemoteService {
     private RestTemplate template;
 
     @Override
-    public int process(int i) {
+    public int circuitBreakerServiceCaller(int i) {
         ResponseEntity<JsonNode> response = template.getForEntity("localhost:9090/test", JsonNode.class);
         System.out.println(response.getStatusCode());
+        return 0;
+    }
+
+    @Override
+    public int rateLimiterServiceCaller(int i) {
+        System.out.println("i : " + i);
         return 0;
     }
 

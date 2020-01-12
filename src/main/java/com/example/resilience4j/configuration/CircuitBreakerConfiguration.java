@@ -1,4 +1,4 @@
-package com.example.resilience4j;
+package com.example.resilience4j.configuration;
 
 import java.time.Duration;
 
