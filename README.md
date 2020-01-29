@@ -20,4 +20,4 @@ A CircuitBreaker can be in following states at any given point in time:
 Define at what rate the requests are served. The project defines a RateLimiterConfig which allows 2 calls every second. After these, every call will wait for 100 miliseconds before getting timed out
 
 # Retry
-Define the retry mechanism for any service. The project defines a RetryConfig which retries when it encounters `HttpServerErrorException.class`. Max 5 retry attempts can be made and every attempt has a wait duration of 2 seconds. We can also configure the exceptions on which retry is to be ignored, or the result on which retryu is to be attempted.
+Define the retry mechanism for any service. The project defines a RetryConfig which retries when it encounters `HttpServerErrorException.class`. Max 5 retry attempts can be made and every attempt has a wait duration of 2 seconds. We can also configure the exceptions on which retry is to be ignored, or the result on which retry is to be attempted.
